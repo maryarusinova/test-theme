@@ -1,34 +1,159 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
-}
+/* test light theme */
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
-}
+:root {
+	--background-primary: #e4e4e4;
+	--background-secondary: #ffffff;
+	--background-secondary-alt: #f5f5f5;
+	
+	--text-normal: #000000;
+	--text-muted: #555555;
+	--text-faint: #999999;
+	
+	--interactive-normal: #e4e4e4;
+	--interactive-hover: #d0d0d0;
+	
+	--font-monospace: 'Iosevka Comfy', 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+	
+	--h1-size: 1.8em;
+	--h2-size: 1.4em;
+	--h3-size: 1.2em;
+	--h4-size: 1.1em;
+	--h5-size: 1em;
+	--h6-size: 0.9em;
+	
+	--line-height: 1.2;
+	--letter-spacing: 0em;
+	
+	--border-width: 1px;
+  }
+  
+  /* Basic typography */
+  body {
+	font-family: var(--font-monospace);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	font-size: 11px;
+	font-weight: 400;
+  }
+  
+  /* Headers */
+  h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-monospace);
+	font-weight: 400;
+	margin-bottom: 15px;
+  }
+  
+  /* Links - styled like on the Anna Cairns website */
+  a {
+	color: var(--text-normal);
+	text-decoration-thickness: 1px;
+	text-decoration-style: solid;
+	text-decoration-line: underline;
+	text-underline-offset: 3px;
+	background: rgba(255,255,255,0.5);
+	padding: 0 3px;
+  }
+  
+  a:hover {
+	opacity: 1;
+  }
+  
+  /* Grid-based layout for certain elements */
+  .markdown-preview-view {
+	padding: 5px;
+  }
+  
+  .markdown-preview-view > div {
+	margin-bottom: 5px;
+  }
+  
+  /* Clean UI elements */
+  .nav-file-title, .nav-folder-title {
+	padding: 4px 5px;
+  }
+  
+  .nav-file-title-content, .nav-folder-title-content {
+	padding-left: 5px;
+  }
+  
+  /* Sidebar refinements */
+  .workspace-tab-header-container {
+	padding: 0 5px;
+  }
+  
+  /* Code blocks */
+  code {
+	font-family: var(--font-monospace);
+	background-color: var(--background-secondary-alt);
+	padding: 0 3px;
+  }
+  
+  pre {
+	padding: 5px;
+	background-color: var(--background-secondary);
+	border: var(--border-width) solid #000000;
+  }
+  
+  /* Tables */
+  table {
+	border-collapse: collapse;
+	margin: 15px 0;
+	width: 100%;
+  }
+  
+  th, td {
+	border: var(--border-width) solid #000000;
+	padding: 5px;
+	text-align: left;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+	border-left: var(--border-width) solid #000000;
+	margin-left: 0;
+	padding-left: 10px;
+  }
+  /* Dark Theme */	
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
-}
-
-.menu {
-	padding: var(--size-2-1);
-}
-
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
-}
+.theme-dark {
+	--background-primary: #202020;
+	--background-secondary: #161616;
+	--background-secondary-alt: #0f0f0f;
+	
+	--text-normal: #ffffff;
+	--text-muted: #aaaaaa;
+	--text-faint: #666666;
+	
+	--interactive-normal: #303030;
+	--interactive-hover: #404040;
+	
+	/* All other variables remain the same */
+  }
+  
+  /* Dark theme adjustments */
+  .theme-dark a {
+	background: rgba(0,0,0,0.5);
+  }
+  
+  .theme-dark pre {
+	border: var(--border-width) solid #ffffff;
+  }
+  
+  .theme-dark th, .theme-dark td {
+	border: var(--border-width) solid #ffffff;
+  }
+  
+  .theme-dark blockquote {
+	border-left: var(--border-width) solid #ffffff;
+  }
+  
+  /* Improved contrast for certain UI elements in dark mode */
+  .theme-dark .nav-file-title:hover, 
+  .theme-dark .nav-folder-title:hover {
+	background-color: var(--interactive-hover);
+  }
+  
+  .theme-dark .is-active {
+	background-color: var(--interactive-hover);
+  }
+  
