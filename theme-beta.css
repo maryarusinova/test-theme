@@ -8,19 +8,19 @@ settings:
       description: Choose a color scheme for the theme
       type: class-select
       allowEmpty: false
-      default: may4th--Scheme-light
+      default: may4th--PrequelsScheme-light
       options:
-          - label: The Light Side
-            value: may4th--Scheme-light
+          - label: Prequels
+            value: may4th--PrequelsScheme-light
     - id: theme-variant-dark
       title: Color Scheme
       description: Choose a color scheme for the theme
       type: class-select
       allowEmpty: false
-      default: may4th--Scheme-dark
+      default: may4th--PrequelsScheme-dark
       options:
-          - label: The Dark Side
-            value: may4th--Scheme-dark
+          - label: Prequels
+            value: may4th--PrequelsScheme-dark
     - id: typograph-settings
       title: Typograph Settings
       type: heading
@@ -477,7 +477,7 @@ body {
 	--side-dock-actions-border-color: transparent;
 } */
 
-/* ---- The Light Side ---- */
+/* ---- Prequels (light) ---- */
 .theme-light {
 	--accent-h: 12;
 	--accent-s: 31%;
@@ -578,26 +578,37 @@ body {
 	--header-active-bg: rgba(31, 34, 37, 0.03);
 }
 
+/* ---- Prequels (dark) ---- */
+
 .theme-dark {
+	--text-normal: var(--color-base-00);   /* very light gray, main text */
+	--text-accent: var(--color-base-10);   /* peach-orange, accent text */
+	--text-muted: var(--color-base-05);    /* light peach, muted/secondary text */
+	--text-faint: var(--color-base-10);    /* peach-orange, faint text for max contrast */
+
 	--accent-h: 8;
 	--accent-s: 87%;
 	--accent-l: 60%;
 
-	--background-primary: #1B363D;
+	--background-primary: #1B3240; /* #1B363D;*/
 	--background-primary-alt: #313D40;
 	--background-secondary: #38464B;
 	--background-secondary-alt: #38464B;
 
 	--background-gradient: linear-gradient(
 		155deg,
-		#1B363D 0%,
+		#1B3240 0%,
 		#313D40,
 		#38464B
+		/* #1B363D 0%,
+		#313D40,
+		#38464B */
 	);
 
-	--background-modifier-border: #313D40;
-	--background-modifier-hover: #313D40;
-
+	--background-modifier-border: #3C3E40; /* #313D40; */
+	--background-modifier-hover: #38464B66; /* original: #313D40; *** #38464B (solid, matches secondary) */
+	--background-modifier-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+/* old base colors (dublicates)
 	--color-base-00: #1B363D;
 	--color-base-05: #313D40;
 	--color-base-10: #38464B;
@@ -609,7 +620,20 @@ body {
 	--color-base-50: #F29472;
 	--color-base-60: #F26B5E;
 	--color-base-70: #F26B5E;
-	--color-base-100: #F2C6B6;
+	--color-base-100: #F2C6B6; */
+	
+	--color-base-00: #F0F1F2;   /* lightest gray (backgrounds, highlights) */
+	--color-base-05: #F2C6B6;   /* light peach (secondary background/accent) */
+	--color-base-10: #F2A285;   /* peach-orange */
+	--color-base-20: #F29472;   /* muted orange */
+	--color-base-25: #F26B5E;   /* coral */
+	--color-base-30: #D9AD2B;   /* golden yellow */
+	--color-base-35: #3C3E40;   /* dark neutral gray */
+	--color-base-40: #313D40;   /* dark blue-gray */
+	--color-base-50: #38464B;   /* slate blue-gray */
+	--color-base-60: #1B3240;   /* deep blue */
+	--color-base-70: #1B363D;   /* deep blue-green */
+	--color-base-100: #593325;  /* deep brown (darkest, for strong contrast) */
 
 	--bold-color: #F2C6B6;
 	--bold-modifier: 200;
@@ -618,25 +642,25 @@ body {
 	--h2-color: #F2A285;
 	--h3-color: #F29472;
 	--h4-color: #F26B5E;
-	--h5-color: #38464B;
+	--h5-color: #8DA6A6;
 	--h6-color: #38464B;
 	--h1-indicator-color: #F2C6B6;
 	--h2-indicator-color: #F2A285;
 	--h3-indicator-color: #F29472;
 	--h4-indicator-color: #F26B5E;
-	--h5-indicator-color: #38464B;
+	--h5-indicator-color: #8DA6A6;
 	--h6-indicator-color: #38464B;
 
-	--blockquote-border-color: #313D40;
+	--blockquote-border-color: #F29472;
 	--blockquote-background-color: rgba(27, 54, 61, 0.6);
 	--blockquote-color: #F2C6B6;
 
 	--codeblock-background: rgba(27, 54, 61, 0.85);
 	--codeblock-caret-color: #F26B5E;
 	--codeblock-border-radius: 8px;
-	--codeblock-border: #313D40;
+	--codeblock-border: #8DA6A6;
 
-	--text-highlight-background: rgba(56, 70, 75, 0.5);
+	--text-highlight-background: rgba(141, 166, 166, 0.5);
 	--text-highlight-border-color: #F26B5E;
 	--text-highlight-color: #F2C6B6;
 
@@ -648,7 +672,7 @@ body {
 	--color-red-rgb: 242, 107, 94;      /* #F26B5E */
 	--color-blue-rgb: 27, 54, 61;        /* #1B363D */
 	--color-purple-rgb: 49, 61, 64;      /* #313D40 */
-	--color-cyan-rgb: 56, 70, 75;        /* #38464B */
+	--color-cyan-rgb: 141, 166, 166;     /* #8DA6A6 */
 	--color-orange-rgb: 242, 148, 114;   /* #F29472 */
 	--color-green-rgb: 56, 70, 75;       /* #38464B */
 	--color-yellow-rgb: 242, 162, 133;   /* #F2A285 */
@@ -656,13 +680,10 @@ body {
 
 	--callout-error: 242, 107, 94;      /* #F26B5E */
 	--callout-warning: 242, 148, 114;    /* #F29472 */
-	--callout-quote: 56, 70, 75;         /* #38464B */
+	--callout-quote: 141, 166, 166;      /* #8DA6A6 */
 
-	--nav-button-container-bg: rgba(56, 70, 75, 0.03);
-	--header-active-bg: rgba(56, 70, 75, 0.05);
-
-	--root-workspace-shadow: 0 2px 8px 0 rgba(27,54,61,0.85), 0 1.5px 4px 0 rgba(49,54,61,0.7);
-	--side-dock-actions-shadow: 0 1.5px 4px 0 rgba(27,54,61,0.85), 0 0.5px 2px 0 rgba(56,70,75,0.7);
+	--nav-button-container-bg: rgba(141, 166, 166, 0.03);
+	--header-active-bg: rgba(141, 166, 166, 0.05);
 }
 
 /* ---------- stuff ---------- */
@@ -1142,7 +1163,6 @@ body:not(.is-mobile):not(.may4th--DisableNavHeaderAutoHide)
 
 body:not(.is-mobile):not(.may4th--DisableNavHeaderAutoHide)
 	.mod-sidedock
-	.workspace-leaf
 	.workspace-leaf-content
 	.nav-header
 	.nav-action-button:hover {
@@ -1229,8 +1249,10 @@ body:not(.is-phone) .workspace {
 	background: var(--background-gradient);
 }
 
-body.is-phone .workspace {
+/* Make sure this is present and applies to all: */
+body .workspace {
 	background-color: var(--background-secondary);
+	background: var(--background-gradient);
 }
 
 .workspace-tabs .workspace-leaf {
@@ -1252,6 +1274,8 @@ body.is-phone .workspace {
 
 body:not(.is-phone) .workspace-tab-container {
 	background-color: var(--background-primary);
+	border-radius: var(--root-workspace-radius);
+	box-shadow: var(--root-workspace-shadow);
 }
 
 .workspace .mod-left-split .workspace-tab-container {
@@ -1274,12 +1298,15 @@ body:not(.is-phone) .workspace-tab-container {
 
 .workspace .mod-root .workspace-tab-header-container {
 	background-color: var(--mod-root-header-background);
+	padding: 0px 12px 4px 0px;
+	margin: var(--mod-root-header-margin);
 }
 
 .workspace .mod-root .workspace-tab-header {
 	padding: 2px;
 	border: 1px solid transparent;
 	border-radius: var(--radius-s);
+	background-color: var(--tab-background-active);
 }
 
 .workspace .mod-root .workspace-tab-header:not(.is-active):hover {
@@ -1440,8 +1467,8 @@ body:not(.is-mobile)
 /* markdown */
 /* file header title */
 body:not(.is-phone) .view-header-title-parent {
-	width: 0;
-	opacity: 0;
+	width: auto;
+	opacity: 1;
 }
 
 @media (hover: hover) {
@@ -1871,3 +1898,123 @@ div.mermaid {
 body.may4th--ParagraphIndent div.markdown-reading-view div.mermaid {
 	--paragraph-indent: 0px;
 }
+
+/* Primary/neutral button */
+.theme-dark .button,
+.theme-dark button:not(.danger):not(.accent):not(.special) {
+  background-color: var(--background-primary); /* rest state: slate blue-gray */
+  color: var(--text-normal);            /* very light gray text */
+  border: none;
+  transition: background 0.2s;
+}
+
+.theme-dark .button:hover,
+.theme-dark button:not(.danger):not(.accent):not(.special):hover {
+  background-color: var(--background-modifier-hover); /* hover: semi-transparent blue-gray */
+}
+
+/* Accent/destructive buttons (keep as is, for reference) */
+.theme-dark .button.danger,
+.theme-dark button.danger,
+.theme-dark .button.accent,
+.theme-dark button.accent {
+  background-color: var(--color-accent); /* coral/orange */
+  color: var(--text-normal);
+}
+
+/* General input fields, dropdowns, and selects */
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select,
+.theme-dark .dropdown,
+.theme-dark .setting-item-control input,
+.theme-dark .setting-item-control select {
+  background-color: var(--background-primary) !important;   /* dark blue-gray */
+  color: var(--text-normal) !important;              /* very light gray text */
+  border: none;
+}
+
+/* Disabled fields */
+.theme-dark input:disabled,
+.theme-dark select:disabled,
+.theme-dark textarea:disabled {
+  background-color: var(--background-primary) !important;   /* slightly lighter blue-gray */
+  color: var(--text-muted) !important;              /* muted text */
+}
+
+/* Toggle switches and checkboxes --- doesnt work
+.theme-dark .checkbox-container,
+.theme-dark .toggle,
+.theme-dark .switch {
+  background-color: var(--color-base-40) !important; /* dark blue-gray 
+  border: 1.5px solid var(--color-base-50) !important;
+}
+
+.theme-dark .checkbox-container input:checked + .checkmark,
+.theme-dark .toggle.is-enabled,
+.theme-dark .switch.is-enabled {
+  background-color: var(--color-accent) !important; 
+  border-color: var(--color-accent) !important; 
+} */
+
+/* Button hover/focus states */
+.theme-dark button:hover,
+.theme-dark .button:hover,
+.theme-dark input[type="button"]:hover,
+.theme-dark input[type="submit"]:hover {
+  background-color: #38464B66 !important; /* semi-transparent blue-gray */
+}
+
+/* Accent/destructive buttons (keep coral/orange) */
+.theme-dark .button.danger,
+.theme-dark button.danger,
+.theme-dark .button.accent,
+.theme-dark button.accent {
+  background-color: var(--color-accent) !important;
+  color: var(--text-normal) !important;
+}
+
+/* Special highlight (if you want to keep gold for rare cases) */
+.theme-dark .button.special,
+.theme-dark button.special {
+  background-color: var(--color-base-30) !important;
+  color: var(--color-base-60) !important; /* or your preferred text color */
+}
+
+/* Toggle OFF state (track) */
+.theme-dark .checkbox-container,
+.theme-dark .setting-item-toggle {
+  background-color: var(--color-base-40) !important; /* dark blue-gray */
+  border: 1.5px solid var(--color-base-50) !important;
+}
+
+/* Toggle ON state (track) */
+.theme-dark .checkbox-container.is-enabled,
+.theme-dark .setting-item-toggle.is-enabled {
+  background-color: var(--color-accent) !important; /* accent color */
+  border-color: var(--color-accent) !important;
+}
+
+/* Toggle track: add subtle inset shadow for depth */
+.theme-dark .checkbox-container,
+.theme-dark .setting-item-toggle {
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.07), inset 0 0 1px rgba(0,0,0,0.21) !important;
+}
+
+/* Toggle knob: add border to visually seat the knob */
+.theme-dark .setting-item-toggle::after,
+.theme-dark .checkbox-container .checkbox:after {
+  border: 2px solid var(--background-primary) !important;
+  box-sizing: border-box;
+}
+
+/* Make metadata property key background transparent in note body, but keep hover/focus effect */
+body .metadata-property-key {
+  background-color: transparent !important;
+}
+
+body .metadata-property-key:hover,
+body .metadata-property-key:focus-within {
+  background-color: var(--background-modifier-hover) !important;
+}
+
